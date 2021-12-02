@@ -56,43 +56,53 @@ class _HomePageState extends State<HomePage> {
             children: <Widget> [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget> [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Container(
-                      color: Colors.blue,
-                      height: 150,
-                      width: 150,
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        itemCount: 20,
-                        itemBuilder: (context, position){
-                          return _list_buttom(position.toString());
-                        },
+                  Column(
+                    children: [
+                      Text("Tracks"),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Container(
+                          color: Colors.blue,
+                          height: 150,
+                          width: 150,
+                          child: ListView.builder(
+                            physics: const BouncingScrollPhysics(),
+                            itemCount: 20,
+                            itemBuilder: (context, position){
+                              return _list_buttom(position.toString());
+                            },
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget> [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Container(
-                      color: Colors.yellow,
-                      height: 150,
-                      width: 150,
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        itemCount: 20,
-                        itemBuilder: (context, position){
-                          return _list_buttom(position.toString());
-                        },
+                  Column(
+                    children: [
+                      Text("Trackers"),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Container(
+                          color: Colors.yellow,
+                          height: 150,
+                          width: 150,
+                          child: ListView.builder(
+                            physics: const BouncingScrollPhysics(),
+                            itemCount: 20,
+                            itemBuilder: (context, position){
+                              return _list_buttom(position.toString());
+                            },
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),
