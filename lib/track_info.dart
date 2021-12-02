@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+class TrackInfo extends StatefulWidget {
+
+  @override
+  TrackInfoState createState() => TrackInfoState();
+}
+
+class TrackInfoState extends State<TrackInfo>{
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("EyeMe"),
+        leading:
+        IconButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed('/');
+          },
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black,
+          tooltip: "Home",
+        ),
+      ),
+      body: body(),
+    );
+  }
+
+  Widget body(){
+    return SafeArea(
+        child: Container(
+          padding: const EdgeInsets.all(5.0),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey)
+          ),
+          child: Row(
+            children: [
+              Text("Jhaos"),
+              Text("Calle Tuerca"),
+              Text("06:10"),
+              Text("Hace 3 horas")
+            ],
+          ),
+        ),
+    );
+  }
+}
