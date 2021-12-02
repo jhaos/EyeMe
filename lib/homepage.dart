@@ -9,9 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Widget _Track(_text){
-    return Text(_text);
-  }
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +30,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _list_buttom(){
+  Widget _Track(_text){
+    return Text(_text);
+  }
+
+  Widget _list_buttom(_text){
     return ElevatedButton(
       onPressed: () {
         Navigator.push(context,
@@ -40,7 +42,7 @@ class _HomePageState extends State<HomePage> {
               builder: (context) => TrackInfo()
           ),
         );
-      }, child: Text("Go to tracks"),
+      }, child: _Track(_text),
     );
   }
   Widget _body() {
@@ -66,8 +68,28 @@ class _HomePageState extends State<HomePage> {
                         physics: const BouncingScrollPhysics(),
                         itemCount: 20,
                         itemBuilder: (context, position){
-                          _list_buttom();
-                          return _Track(position.toString());
+                          return _list_buttom(position.toString());
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget> [
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Container(
+                      color: Colors.yellow,
+                      height: 150,
+                      width: 150,
+                      child: ListView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        itemCount: 20,
+                        itemBuilder: (context, position){
+                          return _list_buttom(position.toString());
                         },
                       ),
                     ),
@@ -82,16 +104,18 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Container(
                       color: Colors.red,
-                      height: 150,
-                      width: 150,
+                      height: 25,
+                      width: 100,
+                      child: Text("Recibir Track"),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Container(
                       color: Colors.green,
-                      height: 150,
-                      width: 150,
+                      height: 25,
+                      width: 100,
+                      child: Text("Solicitar track"),
                     ),
                   )
                 ],
