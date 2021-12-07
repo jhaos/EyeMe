@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testing/permissions.dart';
 
 class TrackInfo extends StatefulWidget {
 
@@ -23,6 +24,17 @@ class TrackInfoState extends State<TrackInfo>{
           color: Colors.black,
           tooltip: "Home",
         ),
+        actions: [
+          IconButton(
+              onPressed: (){
+                Navigator.push(context,
+                  MaterialPageRoute(
+                      builder: (context) => Permissions()
+                  ),
+                );
+              },
+              icon: Icon(Icons.add_alert)),
+        ],
       ),
       body: body(),
     );
