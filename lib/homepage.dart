@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:testing/track_info.dart';
 
+import 'permissions.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -10,21 +12,23 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("EyeMe"),
         actions: <Widget>[
-          IconButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Hay que abrir lista de notificaciones')));
+        IconButton(
+            onPressed: (){
+              Navigator.push(context,
+                  MaterialPageRoute(
+                  builder: (context) => Permissions()
+                ),
+              );
             },
-            icon: const Icon(Icons.add_alert),
-            tooltip: "Notificaciones",
-          )
+            icon: Icon(Icons.add_alert)),
         ],
+          automaticallyImplyLeading: false
       ),
       body: _body(),
     );
