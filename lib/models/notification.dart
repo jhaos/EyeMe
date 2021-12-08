@@ -18,4 +18,30 @@ class NotificationModel extends Equatable{
 
   @override
   List<Object?> get props => [id, userName, userId, description, kind];
-}
+
+  factory NotificationModel.fromJson(Map<String, dynamic> json){
+    if (json == null){
+      throw StateError("Notification data cannot be null");
+    }
+    return NotificationModel(
+        id: json["id"] as String,
+        userName: json["userName"] as String,
+        userId: json["userId"] as String ,
+        description: json["description"] as String,
+        kind: json["kind"] as String
+    );
+  }
+
+  @override
+  String toString() {
+    return 'TrackInfo{id: $id, userName: $userName, userId: $userId, '
+        'description: $description, kind: $kind';
+  }
+
+  Map<String, dynamic> toMap() => <String, dynamic>{
+    'id': id,
+    'userName': userName,
+    'userId': userId,
+    'description': description,
+    'kind': kind,
+  };}

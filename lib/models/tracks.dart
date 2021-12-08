@@ -24,9 +24,30 @@ class TrackModel extends Equatable{
 
   @override
   String toString() {
-    // TODO: implement toString
     return 'TrackInfo{id: $id, tracker: $tracker, tracked: $tracked, '
         'location: $location, interval: $interval, end: $end';
   }
-  
+
+  factory TrackModel.fromJson(Map<String, dynamic> json){
+    if (json == null){
+      throw StateError("Tracks data cannot be null");
+    }
+    return TrackModel(
+        id: json["id"] as String,
+        tracker: json["tracker"] as String,
+        tracked: json["tracked"] as String ,
+        location: json["location"] as Location,
+        interval: json["interval"] as int,
+        end: json["end"] as String
+    );
+  }
+
+  Map<String, dynamic> toMap() => <String, dynamic>{
+    'id': id,
+    'fullName': tracker,
+    'email': tracked,
+    'level': location,
+    'tlf': interval,
+    'image': end,
+  };
 }
