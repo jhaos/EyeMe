@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "217181498498",
+    "project_id": "eyeme-a6bac",
+    "storage_bucket": "eyeme-a6bac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217181498498:android:0b0cc8d54f56b4da98589b",
+        "android_client_info": {
+          "package_name": "com.example.testing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217181498498-v2degqt9gq83b4k5nphrr3764c5ekcec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnxWJyhkrKj3TFCHSadGeTnn_Ag-uK5JA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217181498498-v2degqt9gq83b4k5nphrr3764c5ekcec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
